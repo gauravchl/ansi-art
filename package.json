@@ -1,0 +1,23 @@
+{
+  "name": "ansi-art",
+  "version": "1.0.0",
+  "description": "create ansi art using simple texts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravchl/ansi-art.git"
+  },
+  "keywords": [
+    "ansi",
+    "art"
+  ],
+  "author": "gaurav chikhale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gauravchl/ansi-art/issues"
+  },
+  "homepage": "https://github.com/gauravchl/ansi-art#readme"
+}
