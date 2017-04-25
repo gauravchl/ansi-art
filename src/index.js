@@ -14,7 +14,8 @@ const colors = {
 
 
 
-let getANSIFromArt = function(art) {
+
+let getANSI = function(art) {
   let artArray = art && art.trim() && art.trim().split('\n');
   if (!artArray || !artArray.length) return;
   return artArray.map(row => {
@@ -23,4 +24,5 @@ let getANSIFromArt = function(art) {
 }
 
 
-export default { getANSIFromArt }
+
+export default { getANSI }
