@@ -25,7 +25,7 @@ let getSpeechBubble = function(text) {
 
 // options.speak: string, Shows it inside 'speak bubble'
 
-let get = function(art, options) {
+let get = function(art, options={}) {
   let artArray = art && art.trim() && art.trim().split('\n');
   if (!artArray || !artArray.length) return;
   let { speak } = options;
