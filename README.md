@@ -42,19 +42,20 @@ options | object | More options for ansi art
 options.speak | string | If provided, render the text inside 'speech bubble' above the ANSI art
 
 
-You can also import existing arts available inside '/src/arts/'
 
-**Example with existing art:**
+
+**More Examples:**
 
 ```
+// Using Existing Arts, available inside '/src/arts/'
 import ANSI, { MarioArt } from 'ansi-art';
 
 console.log(ANSI.get(MarioArt));
 ```
 
-**Example with speech bubble:**
 
 ```
+// Using Speech bubble
 import ANSI, { MarioArt } from 'ansi-art';
 
 console.log(ANSI.get(MarioArt, {speak: 'Hello World'}));
