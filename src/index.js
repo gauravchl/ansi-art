@@ -1,3 +1,5 @@
+import MarioArt from './arts/mario.js';
+
 
 // More colors: https://en.wikipedia.org/wiki/ANSI_escape_code
 const colors = {
@@ -13,9 +15,9 @@ const colors = {
 }
 
 
+// options.speak: string, Shows it inside 'speak bubble'
 
-
-let getANSI = function(art) {
+let get = function(art, options) {
   let artArray = art && art.trim() && art.trim().split('\n');
   if (!artArray || !artArray.length) return;
   return artArray.map(row => {
@@ -25,4 +27,7 @@ let getANSI = function(art) {
 
 
 
-export default { getANSI }
+
+export default { get }
+
+export { MarioArt }
