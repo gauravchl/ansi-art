@@ -1,11 +1,17 @@
+
+// More colors: https://en.wikipedia.org/wiki/ANSI_escape_code
 const colors = {
-  o: '[48;5;95m',   // orange/brown
   r: '[48;5;9m',    // red
+  b: '[48;5;12m',   // blue
+  g: '[48;5;10m',   // green
   x: '[48;5;0m',    // black
-  b: '[48;5;33m',   // blue
+  w: '[48;5;15m',   // white
+  o: '[48;5;95m',   // orange/brown
+  y: '[48;5;224m',  // yellow/peach
   Y: '[48;5;11m',   // yello/bright
-  '.': '[m'        // transparent
+  '.': '[m'         // transparent
 }
+
 
 
 let getANSIFromArt = function(art) {
