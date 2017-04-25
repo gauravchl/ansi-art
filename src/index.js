@@ -15,17 +15,28 @@ const colors = {
 }
 
 
+
+let getSpeechBubble = function(text) {
+  let lines = `+${'-'.repeat(text.length + 2)}+ \n| ${text} |\n+${'-'.repeat(text.length + 2)}+\n`
+  lines += '     \\\n      \\\n';
+  return lines
+}
+
+
 // options.speak: string, Shows it inside 'speak bubble'
 
 let get = function(art, options) {
   let artArray = art && art.trim() && art.trim().split('\n');
   if (!artArray || !artArray.length) return;
-  return artArray.map(row => {
+  let { speak } = options;
+
+  let result = artArray.map(row => {
     return row.split('').map(item => `\x1b${colors[item]}  \x1b[0m`).join('');
   }).join('\n');
+
+  if (speak) result = getSpeechBubble(speak) + result;
+  return result;
 }
-
-
 
 
 export default { get }

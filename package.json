@@ -1,6 +1,6 @@
 {
   "name": "ansi-art",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "create ansi art using simple texts",
   "main": "dist/index.js",
   "scripts": {
