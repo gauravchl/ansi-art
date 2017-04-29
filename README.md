@@ -62,3 +62,5 @@ console.log(ANSI.get(MarioArt, {speak: 'Hello World'}));
 ```
 
 <img width="375" alt="screen shot 2017-04-25 at 12 45 50 pm" src="https://cloud.githubusercontent.com/assets/3471415/25372927/2b153fa4-29b5-11e7-97ab-dbcfecbc5e28.png">
+
+Inspiration and Mario credits: https://github.com/acarl005/node-super-mario
