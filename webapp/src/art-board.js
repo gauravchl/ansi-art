@@ -73,7 +73,6 @@ let updateDownloadLink = function() {
   let download = document.getElementById('download');
   let href = 'data:text/plain;charset=utf-8,';
   href += encodeURIComponent(ArtBoard.getANSI());
-  console.log(href);
   download.setAttribute('href', href);
 }
 
