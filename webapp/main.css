@@ -15,26 +15,26 @@ body{
 }
 p ,h1,h2,h3,h4,h6
 {
-     padding: 0;
+    padding: 0;
     margin: 0;
 }
 
 
-.clearfix:before
-.clearfix:after
-  content: " "
-  display: table
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
 
-.clearfix:after
-  clear: both
-
-
-.container {
-  background: #f5f5f5;
-  display: inline-block;
+.clearfix:after {
+  clear: both;
 }
 
 
+.art-board {
+  background: #f5f5f5;
+  display: inline-block;
+}
 
 .block {
   float: left;
@@ -42,11 +42,6 @@ p ,h1,h2,h3,h4,h6
   cursor: pointer;
   user-select: none;
 }
-
-.block:nth-child(20n + 1) {
-  clear: left;
-}
-
 
 .color-picker {
   margin: 32px 0;
