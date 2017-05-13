@@ -41,6 +41,8 @@ p ,h1,h2,h3,h4,h6
 
 .color-picker {
   margin: 32px 0;
+  max-width: 736px;
+  display: inline-block;
 }
 
 .color-picker div{

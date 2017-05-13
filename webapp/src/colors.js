@@ -1,4 +1,4 @@
-colors = [
+let colors = [
   { ansi:'00',  hex:'#000000'},
   { ansi:'01',  hex:'#800000'},
   { ansi:'02',  hex:'#008000'},
@@ -255,4 +255,6 @@ colors = [
   { ansi:'253', hex:'#dadada'},
   { ansi:'254', hex:'#e4e4e4'},
   { ansi:'255', hex:'#eeeeee'}
-]
+];
+
+export default colors;

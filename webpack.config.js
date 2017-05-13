@@ -4,6 +4,8 @@ var webpack = require('webpack');
 
 var DIST_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname, 'src');
+var WEB_DIR = path.resolve(__dirname, 'webapp');
+
 
 
 var config = {
@@ -36,5 +38,29 @@ var config = {
 };
 
 
+var webappConfig = {
+  entry: WEB_DIR + '/src/index.js',
+  output: {
+    path: WEB_DIR,
+    filename: 'index.js',
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js|\.es6$/,
+        include: WEB_DIR + '/src',
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: { presets: ['es2015']}
+      },
+    ],
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+  ],
 
-module.exports = [config];
+}
+
+
+
+module.exports = [config, webappConfig];
