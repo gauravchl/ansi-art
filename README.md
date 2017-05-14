@@ -56,4 +56,9 @@ options.speechText | string | If provided, render the text inside 'speech bubble
 
 
 Mario credits: https://github.com/acarl005/node-super-mario
+
 Parrot credits: https://github.com/matheuss/parrotsay-api
+
+**Contributing**
+
+Please feel free to submit any bugs or suggestions as issues or request to add any art into existing collections. Pull requests are welcome.
