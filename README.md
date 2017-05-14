@@ -1,66 +1,59 @@
 #### ANSI ART
 
-Create ANSI art using simple texts
+Create ANSI art and render it with speech bubbles inside node.
+
+https://gauravchl.github.io/ansi-art/webapp/
 
 <img width="510" alt="screen shot 2017-04-25 at 11 51 53 am" src="https://cloud.githubusercontent.com/assets/3471415/25371301/b440ebe6-29ad-11e7-8459-abbea63e1630.png">
 
 
-**Example:**
+**Steps:**
+1. Create and download the ANSI art from webapp: https://gauravchl.github.io/ansi-art/webapp/
+2. Install `npm install ansi-art ` package to render the downloaded art file.
+
+3. You can render existing art files available inside '/src/arts/'.
+
+
+**Examples:**
 
 ```
+// Using existing art
 import ANSI from 'ansi-art';
-
-const mario = `
-.....rrrrr..yyy.
-....rrrrrrrrryy.
-....oooyyxy.rrr.
-...oyoyyyxyyyrr.
-...oyooyyyoyyyr.
-...ooyyyyoooor..
-.....yyyyyyyrr..
-..rrrrbrrrbrr..o
-yyrrrrrbrrrb..oo
-yyyrrrrbbbbYbboo
-.y..brbbYbbbbboo
-..ooobbbbbbbbboo
-.ooobbbbbb......
-.oo.............
-`
-
-let mario = ANSI.get(mario);
-
+let mario = ANSI.get({artName: 'mario'});
 console.log(mario);
 
 ```
 
-**ANSI.get(text, options):**
-
-Parameter | Type | Description
-------|------ | -------------
-text    | string | Text to be converted into ANSI, Characters inside text represents the color. r for red, b for blue, '.' for transparent., [See available colors](https://github.com/gauravchl/ansi-art/blob/master/src/index.js#L5):
-options | object | More options for ansi art
-options.speak | string | If provided, render the text inside 'speech bubble' above the ANSI art
-
-
-
-
-**More Examples:**
 
 ```
-// Using Existing Arts, available inside '/src/arts/'
-import ANSI, { MarioArt } from 'ansi-art';
-
-console.log(ANSI.get(MarioArt));
+// Using custom art file
+import ANSI from 'ansi-art';
+let art = ANSI.get({filePath: '~/desktop/custom-art.ansi'})
+console.log(art);
 ```
-
 
 ```
 // Using Speech bubble
-import ANSI, { MarioArt } from 'ansi-art';
+import ANSI from 'ansi-art';
+let art = ANSI.get({artName: 'mario', speechText: 'Hello world'}
+console.log(art);
 
-console.log(ANSI.get(MarioArt, {speak: 'Hello World'}));
 ```
+
+**ANSI.get(options):**
+
+Parameter | Type | Description
+------|------ | -------------
+options.filePath | string | Path to custom ANSI art file(eg: ~/mario.ansi)
+options.artName | string |  Name of existing ANSI art available within package.[See available arts](https://github.com/gauravchl/ansi-art/blob/master/src/arts/)
+options.speechText | string | If provided, render the text inside 'speech bubble' above the ANSI art
+
+
+
+
+
+
 
 <img width="375" alt="screen shot 2017-04-25 at 12 45 50 pm" src="https://cloud.githubusercontent.com/assets/3471415/25372927/2b153fa4-29b5-11e7-97ab-dbcfecbc5e28.png">
 
-Inspiration and Mario credits: https://github.com/acarl005/node-super-mario
+Mario credits: https://github.com/acarl005/node-super-mario
