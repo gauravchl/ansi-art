@@ -1,4 +1,4 @@
-import MarioArt from './arts/mario.ansi';
+import Mario from './arts/mario.ansi';
 import Minions from './arts/minions.ansi';
 import fs from 'fs';
 
