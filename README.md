@@ -11,7 +11,7 @@ https://gauravchl.github.io/ansi-art/webapp/
 1. Create and download the ANSI art from webapp: https://gauravchl.github.io/ansi-art/webapp/
 2. Install `npm install ansi-art ` package to render the downloaded art file.
 
-3. You can render existing art files available inside '/src/arts/'.
+3. You can also render existing art files directly which is available inside repo: '/src/arts/'.
 
 
 **Examples:**
@@ -52,8 +52,7 @@ options.speechText | string | If provided, render the text inside 'speech bubble
 
 
 
+<img width="242" alt="screen shot 2017-05-14 at 4 57 37 pm" src="https://cloud.githubusercontent.com/assets/3471415/26033277/97663dc8-38c6-11e7-88d3-3d4534642ef4.png">
 
-
-<img width="375" alt="screen shot 2017-04-25 at 12 45 50 pm" src="https://cloud.githubusercontent.com/assets/3471415/25372927/2b153fa4-29b5-11e7-97ab-dbcfecbc5e28.png">
 
 Mario credits: https://github.com/acarl005/node-super-mario
