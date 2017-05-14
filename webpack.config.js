@@ -24,7 +24,11 @@ var config = {
         exclude: /node_modules/,
         query: { presets: ['es2015']}
       },
-    ],
+      {
+        test: /\.(ansi)$/i,
+        loader: 'file-loader?name=/arts/[name].[ext]'
+      }
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -34,6 +38,12 @@ var config = {
     }),
     new webpack.optimize.UglifyJsPlugin(),
   ],
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false,
+  }
+
 
 };
 
@@ -63,4 +73,4 @@ var webappConfig = {
 
 
 
-module.exports = [config, webappConfig];
+module.exports = [ config, webappConfig ];
