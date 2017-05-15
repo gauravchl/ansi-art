@@ -23,7 +23,7 @@ let get = function(options) {
   let result = '';
 
   if (filePath) {
-    if (fs.existsSync(filePath)) return 'File not found!';
+    if (!fs.existsSync(filePath)) return `Art file not found!${filePath}`;
     result = fs.readFileSync(filePath, 'utf8');
   } else if (artName) {
     let art = Arts.find(item => item.name === artName);
