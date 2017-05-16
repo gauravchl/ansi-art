@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="icon" href="favicon.png" />
+    <link rel="canonical" href="http://localhost:8080/ansi-art/webapp/" />
+
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js', { scope: './' }).then(function(){
+          console.log('service worker regeistered!');
+        })
+      }
+    </script>
 </head>
 
 <body>
