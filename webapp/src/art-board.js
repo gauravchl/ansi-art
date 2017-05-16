@@ -4,15 +4,19 @@ let ArtBoard = {
   init(options={}) {
     if (options.width) width = options.width;
     if (options.height) height = options.height;
+    let bgColorsArray = options.bgColorsArray;
     let artBoardEle = document.querySelectorAll('.art-board')[0];
     artBoardEle.innerHTML = '';
     for (let i = 0; i < height; i++) {
       for (let j = 0; j < width; j++) {
         let blockEle = document.createElement('div');
+        let ansiColor = bgColorsArray && bgColorsArray[i] && bgColorsArray[i][j] || '00'
+        let color = Colors.find(c => c.ansi === ansiColor)
+
         blockEle.innerHTML = '&#xa0;&#xa0;'
         blockEle.setAttribute('class', 'block');
-        blockEle.setAttribute('data-bg', '#000000');
-        blockEle.style.background = '#000000';
+        blockEle.setAttribute('data-bg', color && color.hex);
+        blockEle.style.background = color && color.hex;
         if (j===0) blockEle.style.clear = 'left';
         blockEle.addEventListener('mouseover', handleMouseOver)
         blockEle.addEventListener('mouseleave', handleMouseLeave)
@@ -34,6 +38,27 @@ let ArtBoard = {
       if (i > 1 && (i + 1) % width === 0) result += '\n'
     })
     return result;
+  },
+
+
+  loadANSI(content='') {
+    content = content.trim()
+    if (!content) return;
+    let lines = content.split('\n')
+
+    lines = lines.map(line => {
+      let newLine = line.split(/\[48;5;(.*?)\[0m/);
+      newLine = newLine && newLine.filter(s => s.indexOf('m') > -1);
+      newLine = newLine.map(s => s.substring(0, s.indexOf('m')));
+      return newLine;
+    })
+
+    let options = {
+      width: lines && lines[0] && lines[0].length,
+      height: lines && lines.length,
+      bgColorsArray: lines,
+    }
+    ArtBoard.init(options);
   },
 
 

@@ -62,3 +62,29 @@ p ,h1,h2,h3,h4,h6
   transform:scale(1.6);
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
 }
+
+
+#upload {
+  position: relative;
+}
+
+#upload-ip {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  z-index:-1;
+}
+
+
+.btn {
+  color: #424242;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  height: 32px;
+  background: #e0e0e0;
+  padding: 0 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
