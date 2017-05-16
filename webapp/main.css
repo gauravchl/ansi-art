@@ -19,6 +19,9 @@ p ,h1,h2,h3,h4,h6
     margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
 
 .clearfix:before,
 .clearfix:after {
@@ -87,4 +90,16 @@ p ,h1,h2,h3,h4,h6
   padding: 0 14px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.footer {
+  margin: 32px auto 0 auto;
+  padding-top: 22px;
+  border-top: solid 1px #e0e0e0;
+  max-width: 700px;
+  color: #888;
+}
+.footer a{
+  display: inline-flex;
+  align-items: center;
 }
