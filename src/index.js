@@ -2,6 +2,7 @@ import Mario from './arts/mario.ansi';
 import Minions from './arts/minions.ansi';
 import Parrot from './arts/parrot.ansi';
 import Ironman from './arts/ironman.ansi';
+import Panda from './arts/panda.ansi';
 import fs from 'fs';
 
 
@@ -9,7 +10,8 @@ let Arts = [
   { name: 'mario',   path: __dirname + Mario },
   { name: 'minions', path: __dirname + Minions },
   { name: 'parrot', path: __dirname + Parrot },
-  { name: 'ironman', path: __dirname + Ironman }
+  { name: 'ironman', path: __dirname + Ironman },
+  { name: 'panda', path: __dirname + Panda }
 ]
 
 
