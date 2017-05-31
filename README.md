@@ -11,7 +11,7 @@ https://gauravchl.github.io/ansi-art/webapp/
 1. Create and download the ANSI art from webapp: https://gauravchl.github.io/ansi-art/webapp/
 2. Install `npm install ansi-art ` package to render the downloaded art file.
 
-3. You can also render existing art files directly which is available inside repo: '/src/arts/'.
+3. You can also render the pre-made art files in '/src/arts/'.
 
 
 **Examples:**
