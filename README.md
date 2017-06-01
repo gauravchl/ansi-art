@@ -18,6 +18,15 @@ https://gauravchl.github.io/ansi-art/webapp/
 
 ```
 // Using existing art
+let ANSI = require('ansi-art').default;
+let mario = ANSI.get({artName: 'mario'});
+console.log(mario);
+
+```
+
+```
+// Or use it with ES6 module
+
 import ANSI from 'ansi-art';
 let mario = ANSI.get({artName: 'mario'});
 console.log(mario);
