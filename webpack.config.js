@@ -1,15 +1,13 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const SRC_DIR = path.resolve(__dirname, 'src');
+const WEB_DIR = path.resolve(__dirname, 'webapp');
 
 
-var DIST_DIR = path.resolve(__dirname, 'dist');
-var SRC_DIR = path.resolve(__dirname, 'src');
-var WEB_DIR = path.resolve(__dirname, 'webapp');
-
-
-
-var config = {
-  entry: SRC_DIR + '/index.js',
+const config = {
+  entry: `${SRC_DIR}/index.js`,
   output: {
     path: DIST_DIR,
     filename: 'index.js',
@@ -18,17 +16,19 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js|\.es6$/,
+        test: /\.js$/,
         include: SRC_DIR,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: { presets: ['es2015']}
+        query: {
+          presets: ['env'],
+        },
       },
       {
         test: /\.(ansi)$/i,
-        loader: 'file-loader?name=/arts/[name].[ext]'
-      }
-    ]
+        loader: 'file-loader?name=/arts/[name].[ext]',
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -42,14 +42,12 @@ var config = {
   node: {
     __dirname: false,
     __filename: false,
-  }
-
-
+  },
 };
 
 
-var webappConfig = {
-  entry: WEB_DIR + '/src/index.js',
+const webappConfig = {
+  entry: `${WEB_DIR}/src/index.js`,
   output: {
     path: WEB_DIR,
     filename: 'index.js',
@@ -57,20 +55,20 @@ var webappConfig = {
   module: {
     loaders: [
       {
-        test: /\.js|\.es6$/,
-        include: WEB_DIR + '/src',
+        test: /\.js$/,
+        include: `${WEB_DIR}/src`,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: { presets: ['es2015']}
+        query: {
+          presets: ['env'],
+        },
       },
     ],
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
   ],
-
-}
-
+};
 
 
-module.exports = [ config, webappConfig ];
+module.exports = [config, webappConfig];
