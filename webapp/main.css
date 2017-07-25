@@ -3,36 +3,40 @@ button,
 input,
 select,
 textarea {
-    color: #004358;
+  color: #004358;
 }
 
-body{
-    font-size: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: monospace;
-    text-align: center;
+body {
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  text-align: center;
 }
-p ,h1,h2,h3,h4,h6
-{
-    padding: 0;
-    margin: 0;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h6 {
+  padding: 0;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
   content: " ";
   display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
   clear: both;
 }
-
 
 .art-board {
   background: #f5f5f5;
@@ -52,20 +56,19 @@ a {
   display: inline-block;
 }
 
-.color-picker div{
+.color-picker div {
   width: 20px;
   height: 20px;
   display: inline-block;
   cursor: pointer;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
 .color-picker div:hover,
 .color-picker div[active] {
-  transform:scale(1.6);
+  transform: scale(1.6);
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
 }
-
 
 #upload {
   position: relative;
@@ -73,12 +76,11 @@ a {
 
 #upload-ip {
   position: absolute;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   opacity: 0;
-  z-index:-1;
+  z-index: -1;
 }
-
 
 .btn {
   color: #424242;
@@ -93,13 +95,14 @@ a {
 }
 
 .footer {
-  margin: 32px auto 0 auto;
+  margin: 32px auto 0;
   padding-top: 22px;
   border-top: solid 1px #e0e0e0;
   max-width: 700px;
   color: #888;
 }
-.footer a{
+
+.footer a {
   display: inline-flex;
   align-items: center;
 }
