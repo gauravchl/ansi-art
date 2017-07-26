@@ -1,1 +1,3 @@
 dist/
+webapp/*.js
+webapp/src/colors.js
