@@ -24,10 +24,6 @@ const config = {
           presets: ['env'],
         },
       },
-      {
-        test: /\.(ansi)$/i,
-        loader: 'file-loader?name=/arts/[name].[ext]',
-      },
     ],
   },
   plugins: [

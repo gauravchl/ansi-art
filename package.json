@@ -33,8 +33,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
+    "build": "webpack -p && npm run copy-arts",
     "watch": "webpack --watch --progress",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "copy-arts": "cp -R src/arts/ dist/arts/"
   }
 }
