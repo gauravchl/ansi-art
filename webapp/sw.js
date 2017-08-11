@@ -1,5 +1,5 @@
 const APP_PREFIX = 'ANSI-ART';
-const VERSION = 'version_01';
+const VERSION = 'version_02';
 const CACHE_NAME = APP_PREFIX + VERSION;
 const URLS = [
   './',
@@ -9,35 +9,45 @@ const URLS = [
   './favicon.png',
 ];
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then(request => request || fetch(e.request)),
-  );
-});
+self.addEventListener('install', e => e.waitUntil(swInstall()))
+self.addEventListener('activate', e => e.waitUntil(swActivate()))
+self.addEventListener('fetch', e => e.respondWith(swFetch(e)))
 
-// Cache resources
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(URLS)),
-  );
-});
 
-// Delete outdated caches
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keyList) => {
-      // `keyList` contains all cache names under your username.github.io
-      // filter out ones that has this app prefix to create white list
-      const cacheWhitelist = keyList.filter(key => key.indexOf(APP_PREFIX));
-      // add current cache name to white list
-      cacheWhitelist.push(CACHE_NAME);
+async function swFetch(e) {
+  console.log('sw[fetch]')
+  let request = await caches.match(e.request);
+  return request || fetchAndCache(e.request);
+}
 
-      return Promise.all(keyList.map((key, i) => {
-        if (cacheWhitelist.indexOf(key) === -1) {
-          console.log(`deleting cache: ${keyList[i]}`);
-          return caches.delete(keyList[i]);
-        }
-      }));
-    }),
-  );
-});
+
+async function swInstall() {
+  console.log('sw[install]')
+  const cache = await caches.open(CACHE_NAME);
+  let options = { headers: { 'cache-control': 'no-cache' }};
+  let requests = URLS.map(url => new Request(url, options))
+  await cache.addAll(requests);
+  await self.skipWaiting();
+}
+
+
+async function swActivate() {
+  console.log('sw[activate]')
+  let keyList = await caches.keys();
+  let cacheWhitelist = keyList.filter(key => key.indexOf(APP_PREFIX));
+  cacheWhitelist.push(CACHE_NAME)
+  return Promise.all(keyList.map(function (key, i) {
+    if (cacheWhitelist.indexOf(key) === -1) {
+      console.log('deleting cache : ' + keyList[i])
+      return caches.delete(keyList[i])
+    }
+  }))
+}
+
+
+async function fetchAndCache(request){
+  const res = await fetch(request);
+  const cache = await caches.open(CACHE_NAME);
+  cache.put(request, res.clone());
+  return res;
+}
