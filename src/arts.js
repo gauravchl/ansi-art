@@ -1,6 +1,6 @@
 import path from 'path';
 
-module.exports = [
+const arts  = [
   {
     name: 'mario',
     path: path.resolve(__dirname, 'arts/mario.ansi'),
@@ -27,3 +27,5 @@ module.exports = [
   },
 ];
 
+
+export default arts
