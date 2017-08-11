@@ -1,4 +1,4 @@
-let colors = [
+const colors = [
   { ansi:'00',  hex:'#000000'},
   { ansi:'01',  hex:'#800000'},
   { ansi:'02',  hex:'#008000'},
