@@ -1,4 +1,5 @@
 #### ANSI ART
+[![npm](https://img.shields.io/npm/v/ansi-art.svg?maxAge=000)](https://www.npmjs.com/package/ansi-art) [![npm](https://img.shields.io/npm/dm/ansi-art.svg?maxAge=000)](https://www.npmjs.com/package/ansi-art)
 
 Create ANSI art and render it with speech bubbles inside node.
 
