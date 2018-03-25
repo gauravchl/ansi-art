@@ -1,14 +1,7 @@
-import fs from 'fs';
-import arts from './arts';
-
-function getSpeechBubble(text) {
-  const dashes = '-'.repeat(text.length + 2);
-
-  let lines = `+${dashes}+ \n| ${text} |\n+${dashes}+\n`;
-  lines += '     \\\n      \\\n';
-
-  return lines;
-}
+'use-strict';
+const fs = require('fs');
+const arts = require('./arts');
+const chatBubble = require('node-chat-bubble');
 
 
 function get(options) {
@@ -26,10 +19,12 @@ function get(options) {
     return 'artName or filePath required.';
   }
 
-  if (speechText) result = getSpeechBubble(speechText) + result;
-
+  if (speechText) result =  chatBubble.get(speechText) + '\n     \\\n      \\\n' + result;
   return result;
 }
 
 
-export default { get };
+
+
+
+module.exports = { get, default: { get } };

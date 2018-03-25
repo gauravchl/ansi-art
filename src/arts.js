@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 const arts  = [
   {
@@ -27,5 +27,4 @@ const arts  = [
   },
 ];
 
-
-export default arts
+module.exports = arts;
