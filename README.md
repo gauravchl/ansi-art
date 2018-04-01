@@ -57,6 +57,7 @@ Parameter | Type | Description
 options.filePath | string | Path to custom ANSI art file(eg: ~/mario.ansi)
 options.artName | string |  Name of existing ANSI art available within package.[See available arts](https://github.com/gauravchl/ansi-art/blob/master/src/arts/)
 options.speechText | string | If provided, render the text inside 'speech bubble' above the ANSI art
+options.speechBubbleOptions | object | options for speech bubble, [See available options here](https://github.com/gauravchl/node-chat-bubble)
 
 
 

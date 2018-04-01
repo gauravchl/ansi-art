@@ -1,10 +1,10 @@
 {
   "name": "ansi-art",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "gaurav chikhale",
   "license": "MIT",
   "description": "create ansi art using simple texts",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gauravchl/ansi-art.git"
@@ -16,6 +16,9 @@
     "ansi",
     "art"
   ],
+  "engines": {
+    "node": ">=6.13.1"
+  },
   "homepage": "https://github.com/gauravchl/ansi-art#readme",
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -30,9 +33,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p && npm run copy-arts",
+    "build": "webpack -p",
     "watch": "webpack --watch --progress",
-    "prepublish": "npm run build",
-    "copy-arts": "cp -R src/arts/ dist/arts/"
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "node-chat-bubble": "^1.0.2"
   }
 }
