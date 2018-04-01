@@ -40,6 +40,6 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "node-chat-bubble": "^1.0.0"
+    "node-chat-bubble": "^1.0.2"
   }
 }

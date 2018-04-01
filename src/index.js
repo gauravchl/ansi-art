@@ -1,11 +1,12 @@
 'use-strict';
+
 const fs = require('fs');
 const arts = require('./arts');
 const chatBubble = require('node-chat-bubble');
 
 
 function get(options) {
-  const { artName, filePath, speechText } = options || {};
+  const { artName, filePath, speechText, speechBubbleOptions } = options || {};
   let result = '';
 
   if (filePath) {
@@ -19,12 +20,9 @@ function get(options) {
     return 'artName or filePath required.';
   }
 
-  if (speechText) result =  chatBubble.get(speechText) + '\n     \\\n      \\\n' + result;
+  if (speechText) result = `${chatBubble.get(speechText, speechBubbleOptions)} \n ${result}`;
   return result;
 }
-
-
-
 
 
 module.exports = { get, default: { get } };
