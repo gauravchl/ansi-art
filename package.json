@@ -1,6 +1,6 @@
 {
   "name": "ansi-art",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "gaurav chikhale",
   "license": "MIT",
   "description": "create ansi art using simple texts",
@@ -38,6 +38,6 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "node-chat-bubble": "^1.0.2"
+    "node-chat-bubble": "^1.0.3"
   }
 }
