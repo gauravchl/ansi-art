@@ -17,12 +17,12 @@ function get(options) {
     if (!art) return 'Art not found';
     result = fs.readFileSync(art.path, 'utf8');
   } else {
-    return 'artName or filePath required.';
+    const art = arts[Math.floor(Math.random() * arts.length)];
+    result = fs.readFileSync(art.path, 'utf8');
   }
 
   if (speechText) result = `${chatBubble.get(speechText, speechBubbleOptions)} \n ${result}`;
   return result;
 }
-
 
 module.exports = { get, default: { get } };

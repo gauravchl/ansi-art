@@ -42,6 +42,13 @@ let art = ANSI.get({filePath: '~/desktop/custom-art.ansi'})
 console.log(art);
 ```
 
+```sh
+// Using random art
+import ANSI from 'ansi-art';
+let art = ANSI.get({speechText: 'Hello world'})
+console.log(art);
+```
+
 ```
 // Using Speech bubble
 import ANSI from 'ansi-art';
